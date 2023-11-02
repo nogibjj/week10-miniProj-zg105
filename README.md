@@ -1,34 +1,22 @@
-# Week7-miniProj-zg105
+# Week10-miniProj-zg105
 
-This is a simple command-line tool for SQLite database operations. With it, you can:
-
-- Create a user table
-- Insert some sample users
-- Delete specific users
-- Display current users in the database
+This script is designed to perform an ETL process on IMDB movie data, followed by a query operation to calculate the average rating per genre. It uses Apache Spark to handle data extraction, processing, and querying.
 
 ## Prerequisites
 
-- Python 3.x
-- `click` library
-- `sqlite3` (comes with the standard Python library)
+- Python 3.6 or higher.
+- Apache Spark installed and properly configured.
+- The necessary Python packages installed (pyspark, etc.).
 
 ## Features
 
-1. **Create a User Table**: If the table doesn't exist, the script will create a new user table in the database with fields for `id` and `username`.
+The script does the following:
 
-2. **Insert Users**: The script will insert three users into the user table.
+- Extracts the IMDB movie data from a CSV file hosted on GitHub.
+- Loads the data into a Spark DataFrame with a specified schema.
+- Transforms the data to calculate the average rating of movies per genre.
+- Displays the results in the console.
+- Creates a temporary view of the movie data for additional SQL operations if needed.
 
-3. **Delete User**: The script will delete some users.
-
-4. **Display Users**: The script will then display all current users in the user table.
-
-## Demo
-run python3 main.py zg105.db to start
-
-![](pic1.png)
-
-## User Guide
-run python3 main.py --help to see a user guide
-
-![](pic2.png)
+## Result
+![](result.png)
